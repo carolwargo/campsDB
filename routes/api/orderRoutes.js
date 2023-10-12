@@ -5,7 +5,7 @@ const {
   createOrder,
   updateOrder,
   deleteOrder,
-} = require('../../controllers/courseController.js');
+} = require('../../controllers/orderController.js');
 
 // /api/orders
 router.route('/')
