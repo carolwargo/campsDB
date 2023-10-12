@@ -72,21 +72,21 @@ db.once('open', async () => {
     ]
   });
 
-  await User.create(
-  {
-    first: 'John',
-    last: 'Doe',
+  await User.create({
+    firstName: 'John',
+    lastName: 'Doe',
     email: 'john.doe@example.com',
     cellPhone: '1234567890',
     password: 'password123',
     confirmPassword: 'password123',
-    isConsentGiven: 'true',
+    isConsentGiven: true,
     orders: [
       {
         sessions: [sessions[0]._id, sessions[0]._id]
       }
     ]
   });
+  
   
   await User.create({
     firstName: 'Carol',
