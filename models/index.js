@@ -1,6 +1,6 @@
-const User = require('..models/User');
-const Session = require('..models/Session');
-const Order = require('../models/Order');
+const User = require('./User');
+const Session = require('.Session');
+const Order = require('.Order');
 
 
 module.exports = { User, Player, Sessions };
