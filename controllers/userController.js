@@ -1,4 +1,4 @@
-const { User } = require('../models'); // Import your User model
+const { User, Order } = require('../models'); // Import your User model
 
 const userController = {
   getUsers: async (req, res) => {
