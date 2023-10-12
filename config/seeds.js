@@ -49,7 +49,7 @@ db.once('open', async () => {
     cellPhone: '1111111111',
     password: 'password12345',
     confirmPassword: 'password12345',
-    isConsentGiven: 'true',
+    isConsentGiven: true,
     orders: [
       {
         sessions: [sessions[0]._id, sessions[0]._id, sessions[1]._id]
@@ -64,7 +64,7 @@ db.once('open', async () => {
     cellPhone: '1111111111',
     password: 'password12345',
     confirmPassword: 'password12345',
-    isConsentGiven: 'true',
+    isConsentGiven: true,
     orders: [
       {
         sessions: [sessions[0]._id, sessions[0]._id, sessions[1]._id]
@@ -95,7 +95,7 @@ db.once('open', async () => {
     cellPhone: '4437711726',
     password: 'password12345',
     confirmPassword: 'password12345',
-    isConsentGiven: 'true',
+    isConsentGiven: true,
     orders: [
       {
         sessions: [sessions[0]._id]
