@@ -17,7 +17,7 @@ const sessionSchema = new Schema({
 
   playerName: {
     type: String,
-    required: true,
+    required: false,
     trim: true
   },
 
