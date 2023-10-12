@@ -48,6 +48,8 @@ db.once('open', async () => {
     email: 'pamela@testmail.com',
     cellPhone: '1111111111',
     password: 'password12345',
+    confirmPassword: 'password12345',
+    isConsentGiven: 'true',
     orders: [
       {
         sessions: [sessions[0]._id, sessions[0]._id, sessions[1]._id]
@@ -60,19 +62,49 @@ db.once('open', async () => {
     lastName: 'Holt',
     email: 'eholt@testmail.com',
     cellPhone: '1111111111',
-    password: 'password12345'
-    
+    password: 'password12345',
+    confirmPassword: 'password12345',
+    isConsentGiven: 'true',
+    orders: [
+      {
+        sessions: [sessions[0]._id, sessions[0]._id, sessions[1]._id]
+      }
+    ]
   });
 
+  await User.create(
+  {
+    "first": "John",
+    "last": "Doe",
+    "email": "john.doe@example.com",
+    "cellPhone": "1234567890",
+    "password": "password123",
+    "confirmPassword": "password123",
+    "isConsentGiven": true,
+    orders: [
+      {
+        sessions: [sessions[0]._id, sessions[0]._id]
+      }
+    ]
+  });
+  
   await User.create({
     firstName: 'Carol',
     lastName: 'Wargo',
     email: 'carolwargo@gmail.com',
     cellPhone: '4437711726',
-    password: 'password12345'
+    password: 'password12345',
+    confirmPassword: 'password12345',
+    isConsentGiven: 'true',
+    orders: [
+      {
+        sessions: [sessions[0]._id]
+      }
+    ]
   });
 
   console.log('users seeded');
+
 
   process.exit();
 });
