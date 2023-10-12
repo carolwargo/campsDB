@@ -9,7 +9,7 @@ const {
 } = require('../../controllers/userController.js');
 
 // Import your auth middleware
-const { authMiddleware } = require('../../utils/auth');
+const { authMiddleware } = require('../../utils/auth.js');
 
 // Apply CORS middleware
 const cors = require('cors');
