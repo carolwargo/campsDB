@@ -74,13 +74,13 @@ db.once('open', async () => {
 
   await User.create(
   {
-    first: "John",
-    last: "Doe",
-    email: "john.doe@example.com",
-    cellPhone: "1234567890",
-    password: "password123",
-    confirmPassword: "password123",
-    isConsentGiven: true,
+    first: 'John',
+    last: 'Doe',
+    email: 'john.doe@example.com',
+    cellPhone: '1234567890',
+    password: 'password123',
+    confirmPassword: 'password123',
+    isConsentGiven: 'true',
     orders: [
       {
         sessions: [sessions[0]._id, sessions[0]._id]
