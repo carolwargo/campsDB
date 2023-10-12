@@ -3,7 +3,7 @@ const { User, Session } = require('../models');
 
 db.once('open', async () => {
 
-  await Session.deleteMany();
+ /* await Session.deleteMany();
 
   const sessions = await Session.insertMany([
     {
@@ -39,7 +39,7 @@ db.once('open', async () => {
   ]);
 
   console.log(' sessions seeded');
-
+*/
   await User.deleteMany();
 
   await User.create({
@@ -50,11 +50,6 @@ db.once('open', async () => {
     password: 'password12345',
     confirmPassword: 'password12345',
     isConsentGiven: true,
-    orders: [
-      {
-        sessions: [sessions[0]._id, sessions[0]._id, sessions[1]._id]
-      }
-    ]
   });
 
   await User.create({
@@ -65,11 +60,7 @@ db.once('open', async () => {
     password: 'password12345',
     confirmPassword: 'password12345',
     isConsentGiven: true,
-    orders: [
-      {
-        sessions: [sessions[0]._id, sessions[0]._id, sessions[1]._id]
-      }
-    ]
+   
   });
 
   await User.create({
@@ -80,11 +71,7 @@ db.once('open', async () => {
     password: 'password123',
     confirmPassword: 'password123',
     isConsentGiven: true,
-    orders: [
-      {
-        sessions: [sessions[0]._id, sessions[0]._id]
-      }
-    ]
+   
   });
   
   
@@ -96,11 +83,6 @@ db.once('open', async () => {
     password: 'password12345',
     confirmPassword: 'password12345',
     isConsentGiven: true,
-    orders: [
-      {
-        sessions: [sessions[0]._id]
-      }
-    ]
   });
 
   console.log('users seeded');
