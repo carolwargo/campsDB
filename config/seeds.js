@@ -1,11 +1,23 @@
 const db = require('./connection');
-const { User, Session } = require('../models');
+const { User, Product, Category } = require('../models');
 
 db.once('open', async () => {
 
- /* await Session.deleteMany();
+  await Category.deleteMany();
 
-  const sessions = await Session.insertMany([
+  const category = await Category.insertMany([
+    { name: 'Individual' },
+    { name: 'Group' },
+    { name: 'Single' },
+    { name: 'Package' },
+   
+  ]);
+  
+  console.log('categories seeded');
+
+
+  await Product.deleteMany();
+  const product = await Product.insertMany([
     {
       name: 'Individual Catching Single Session',
       price: 75.00,
@@ -38,8 +50,8 @@ db.once('open', async () => {
       },
   ]);
 
-  console.log(' sessions seeded');
-*/
+  console.log('products seeded');
+
   await User.deleteMany();
 
   await User.create({
@@ -69,20 +81,22 @@ db.once('open', async () => {
     email: 'john.doe@example.com',
     cellPhone: '1234567890',
     password: 'password123',
-    confirmPassword: 'password123',
-    isConsentGiven: true,
    
   });
-  
+  await User.create({
+    firstName: 'Elijah',
+    lastName: 'Holt',
+    cellPhone: '4437711725',
+    email: 'eholt@testmail.com',
+    password: 'password12345'
+  });
   
   await User.create({
     firstName: 'Carol',
     lastName: 'Wargo',
     email: 'carolwargo@gmail.com',
     cellPhone: '4437711726',
-    password: 'password12345',
-    confirmPassword: 'password12345',
-    isConsentGiven: true,
+    password: 'password12345'
   });
 
   console.log('users seeded');

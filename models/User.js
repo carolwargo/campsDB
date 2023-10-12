@@ -5,13 +5,7 @@ const bcrypt = require('bcrypt');
 const Order = require('./Order');
 
 
- /* ADD AFTER TESTING: 
- validate: {
-      validator: function(v) {
-        return /\d{3}-\d{3}-\d{4}/.test(v);
-      },
-      message: props => `${props.value} is not a valid phone number!`
-    }*/
+ 
 const userSchema = new Schema({
   firstName: {
     type: String,
@@ -39,16 +33,7 @@ const userSchema = new Schema({
     required: true,
     minlength: 5
   },
-confirmPassword:{
-    type: String,
-    required: true,
-    minlength: 5
-},
-  isConsentGiven: {
-    type: Boolean,
-    required: true,
-    default: false
-  },
+
   orders: [Order.schema],
 });
 

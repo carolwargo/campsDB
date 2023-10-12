@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
-const sessionSchema = new Schema({
+const productSchema = new Schema({
   name: {
     type: String,
     required: true,
@@ -15,15 +15,13 @@ const sessionSchema = new Schema({
     min: 0.99
   },
 
-  playerName: {
-    type: String,
-    required: false,
-    trim: true
+  category: {
+    type: Schema.Types.ObjectId,
+    ref: 'Category',
+    required: true
   },
-
- 
 });
 
-const Session = mongoose.model('Session', sessionSchema);
+const Product = mongoose.model('Product', productSchema);
 
-module.exports = Session;
+module.exports = Product;
