@@ -6,7 +6,6 @@ import {
 } from "react-router-dom";
 
 
-import LoginForm from "./pages/Login"
 import SignupPage from "./components/SignupForm"
 
 /*const client = new ApolloClient({
@@ -19,7 +18,6 @@ function App() {
    
       <Router>
         <Routes>
-          <Route exact path="/" component={LoginForm} />
           <Route exact path="/signup" component={SignupPage} />
         </Routes>
       </Router>
