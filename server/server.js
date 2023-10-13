@@ -3,7 +3,7 @@ const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
 
 const { typeDefs, resolvers } = require('./schemas');//define typeDefs and resolvers
-const db = require('./config/connection'); //import db connection from connection.js
+const db = require('./config/connection.js'); //import db connection from connection.js
 
 // READ .env file
 const dotenv = require('dotenv');
