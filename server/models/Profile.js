@@ -7,7 +7,19 @@ const profileSchema = new Schema({
     unique: true,
     trim: true,
   },
-  orders: [
+  email:{
+    type: String,
+    required: true,
+    unique: true,
+    match: [/.+@.+\..+/, 'Must match an email address!'],
+  },
+  password:{
+    type: String,
+    required: true,
+    minlength: 5,
+  },
+
+  players: [
     {
       type: String,
       trim: true,
