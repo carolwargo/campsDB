@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 
 import { ADD_PLAYER } from '../../utils/mutations';
+
+import Auth from '../../utils/auth';
 
 const PlayerForm = ({ profileId }) => {
   const [player, setPlayer] = useState('');
@@ -13,7 +16,7 @@ const PlayerForm = ({ profileId }) => {
 
     try {
       // eslint-disable-next-line no-unused-vars
-      const { data } = await addPlayer({
+      const data = await addPlayer({
         variables: { profileId, player },
       });
 
@@ -25,31 +28,39 @@ const PlayerForm = ({ profileId }) => {
 
   return (
     <div>
-      <h4>Endorse some more players below.</h4>
-      <form
-        className="flex-row justify-center justify-space-between-md align-center"
-        onSubmit={handleFormSubmit}
-      >
-        <div className="col-12 col-lg-9">
-          <input
-            placeholder="Endorse some players..."
-            value={player}
-            className="form-input w-100"
-            onChange={(event) => setPlayer(event.target.value)}
-          />
-        </div>
+      <h4>Add Players Below...</h4>
 
-        <div className="col-12 col-lg-3">
-          <button className="btn btn-info btn-block py-3" type="submit">
-            Endorse Player
-          </button>
-        </div>
-        {error && (
-          <div className="col-12 my-3 bg-danger text-white p-3">
-            Something went wrong...
+      {Auth.loggedIn() ? (
+        <form
+          className="flex-row justify-center justify-space-between-md align-center"
+          onSubmit={handleFormSubmit}
+        >
+          <div className="col-12 col-lg-9">
+            <input
+              placeholder="Add Player players..."
+              value={player}
+              className="form-input w-100"
+              onChange={(event) => setPlayer(event.target.value)}
+            />
           </div>
-        )}
-      </form>
+
+          <div className="col-12 col-lg-3">
+            <button className="btn btn-info btn-block py-3" type="submit">
+                Add Player
+            </button>
+          </div>
+          {error && (
+            <div className="col-12 my-3 bg-danger text-white p-3">
+              {error.message}
+            </div>
+          )}
+        </form>
+      ) : (
+        <p>
+          You need to be logged in to add players. Please{' '}
+          <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
+        </p>
+      )}
     </div>
   );
 };
