@@ -1,20 +1,46 @@
-const { AuthenticationError } = require('apollo-server-express');
-const { User} = require('../models');
-const { signToken } = require('../utils/auth');
+//const { AuthenticationError } = require('apollo-server-express');
+const { Profile} = require('../models');
+//const { signToken } = require('../utils/auth');
 
 
 const resolvers = {
   Query: {
-    users: async () => {
-      return User.find();
-    },
-    user: async (parent, {userId }) => {
-      return User.findOne({_id:userId});
-    },
-   
+  profiles: async () => {
+    return Profile.find();
   },
+  profile: async (parent, { profileId }) => {
+    return Profile.findOne({ _id: profileId });
+  },
+  },
+
   Mutation: {
-    addUser: async (parent, { firstname, lastname, email, password }) => {
+    addProfile: async (parent, { name }) => {
+      return Profile.create({ name });
+    },
+    addOder: async (parent, { profileId, order }) => {
+      return Profile.findOneAndUpdate(
+        { _id: profileId },
+        {
+          $addToSet: { orders: order },
+        },
+        {
+          new: true,
+          runValidators: true,
+        }
+      );
+    },
+    removeProfile: async (parent, { profileId }) => {
+      return Profile.findOneAndDelete({ _id: profileId });
+    },
+    removeOrder: async (parent, { profileId, order }) => {
+      return Profile.findOneAndUpdate(
+        { _id: profileId },
+        { $pull: { orders: order } },
+        { new: true }
+      );
+    },
+
+   /* addUser: async (parent, { firstname, lastname, email, password }) => {
       const user = await User.create({ firstname, lastname, email, password });
       const token = signToken(user);
       console.log(token, user);
@@ -39,7 +65,7 @@ const resolvers = {
       return { token, user };
       
     },
-    
+    */
   },
 };
 

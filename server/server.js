@@ -6,8 +6,8 @@ const { typeDefs, resolvers } = require('./schemas');//define typeDefs and resol
 const db = require('./config/connection'); //import db connection from connection.js
 
 // READ .env file
-const dotenv = require('dotenv');
-dotenv.config(); // Load environment variables
+//const dotenv = require('dotenv');
+//dotenv.config(); // Load environment variables
 
 const PORT = process.env.PORT || 3001; // Set the port, use 3001 if PORT is not defined in .env
 const app = express(); // Create a new instance of Express application
@@ -44,8 +44,8 @@ const startApolloServer = async () => {
     app.listen(PORT, () => {
       console.log(`API server running on port ${PORT}!`);
       console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
-    });
-  });
+    })
+  })
 };
 
 // Call the async function to start the server
