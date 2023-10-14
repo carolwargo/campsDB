@@ -3,7 +3,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
-import PlayerList from '../components/PlayerList';
+import PlayerList from '../components/PlayersList';
 import PlayerForm from '../components/PlayerForm';
 
 import { QUERY_SINGLE_PROFILE } from '../utils/queries';

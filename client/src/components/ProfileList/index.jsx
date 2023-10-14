@@ -18,7 +18,7 @@ const ProfileList = ({ profiles, title }) => {
                   {profile.name} <br />
                   <span className="text-white" style={{ fontSize: '1rem' }}>
                     currently has {profile.players ? profile.players.length : 0}{' '}
-                    endorsed player
+                    players
                     {profile.players && profile.players.length === 1 ? '' : 's'}
                   </span>
                 </h4>
@@ -27,7 +27,7 @@ const ProfileList = ({ profiles, title }) => {
                   className="btn btn-block btn-squared btn-light text-dark"
                   to={`/profiles/${profile._id}`}
                 >
-                  View Players.
+                  View Players
                 </Link>
               </div>
             </div>

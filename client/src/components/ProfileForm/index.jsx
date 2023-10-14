@@ -1,27 +1,37 @@
 import React, { useState } from 'react';
-// Import the `useMutation()` hook from Apollo Client
 import { useMutation } from '@apollo/client';
-// Import the GraphQL mutation
-import { ADD_PROFILE } from '../../utils/mutations';
 
-const ProfileForm = () => {
+import { ADD_PROFILE } from '../../utils/mutations';
+import { QUERY_PROFILES } from '../../utils/queries';
+
+const ProfileForm = () => { 
   const [name, setName] = useState('');
 
-  // Invoke `useMutation()` hook to return a Promise-based function and data about the ADD_PROFILE mutation
-  const [addProfile, { error }] = useMutation(ADD_PROFILE);
+  const [addProfile, { error }] = useMutation(ADD_PROFILE, {
+    update(cache, { data: { addProfile } }) {
+      try {
+        const { profiles } = cache.readQuery({ query: QUERY_PROFILES });
+
+        cache.writeQuery({
+          query: QUERY_PROFILES,
+          data: { profiles: [...profiles, addProfile] },
+        });
+      } catch (e) {
+        console.error(e);
+      }
+    },
+  });
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
-    // Since mutation function is async, wrap in a `try...catch` to catch any network errors from throwing due to a failed request.
     try {
-      // Execute mutation and pass in defined parameter data as variables
       // eslint-disable-next-line no-unused-vars
       const { data } = await addProfile({
         variables: { name },
       });
 
-      window.location.reload();
+      setName('');
     } catch (err) {
       console.error(err);
     }
