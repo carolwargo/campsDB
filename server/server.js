@@ -1,6 +1,8 @@
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
+const { authMiddleware } = require('./utils/auth');
+
 
 const { typeDefs, resolvers } = require('./schemas');//define typeDefs and resolvers
 const db = require('./config/connection'); //import db connection from connection.js
@@ -15,6 +17,7 @@ const app = express(); // Create a new instance of Express application
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  context: authMiddleware,
 });
 
 // Parse incoming requests as JSON
