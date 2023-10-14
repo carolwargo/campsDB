@@ -58,7 +58,6 @@ db.once('open', async () => {
     firstName: 'Pamela',
     lastName: 'Washington',
     email: 'pamela@testmail.com',
-    cellPhone: '1111111111',
     password: 'password12345',
     confirmPassword: 'password12345',
     isConsentGiven: true,
@@ -68,7 +67,6 @@ db.once('open', async () => {
     firstName: 'Elijah',
     lastName: 'Holt',
     email: 'eholt@testmail.com',
-    cellPhone: '1111111111',
     password: 'password12345',
     confirmPassword: 'password12345',
     isConsentGiven: true,
@@ -79,14 +77,12 @@ db.once('open', async () => {
     firstName: 'John',
     lastName: 'Doe',
     email: 'john.doe@example.com',
-    cellPhone: '1234567890',
     password: 'password123',
    
   });
   await User.create({
     firstName: 'Elijah',
     lastName: 'Holt',
-    cellPhone: '4437711725',
     email: 'eholt@testmail.com',
     password: 'password12345'
   });
@@ -95,7 +91,6 @@ db.once('open', async () => {
     firstName: 'Carol',
     lastName: 'Wargo',
     email: 'carolwargo@gmail.com',
-    cellPhone: '4437711726',
     password: 'password12345'
   });
 

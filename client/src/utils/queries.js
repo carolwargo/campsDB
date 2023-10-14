@@ -8,7 +8,6 @@ export const GET_USERS = gql`
       firstname
       lastname
       email
-      cellphone
       password
     }
   }
@@ -22,25 +21,8 @@ export const GET_USER = gql`
         firstname
         lastname
         email
-        cellphone
         password
     }
   }
 `;
-
-
-
-export const GET_ME = gql`
-  query Me {
-    me {
-        _id
-        firstname
-        lastname
-        email
-        cellphone
-        password
-    }
-  }
-`;
-
 
