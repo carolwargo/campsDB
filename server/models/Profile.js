@@ -1,32 +1,14 @@
-const { Schema, model } = require('mongoose');
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 const profileSchema = new Schema({
-  name: {
-    type: String,
-    required: true,
-    unique: true,
-    trim: true,
-  },
-  email:{
-    type: String,
-    required: true,
-    unique: true,
-    match: [/.+@.+\..+/, 'Must match an email address!'],
-  },
-  password:{
-    type: String,
-    required: true,
-    minlength: 5,
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
   },
 
-  players: [
-    {
-      type: String,
-      trim: true,
-    },
-  ],
 });
 
-const Profile = model('Profile', profileSchema);
+const Profile = mongoose.model('Profile', profileSchema);
 
 module.exports = Profile;
