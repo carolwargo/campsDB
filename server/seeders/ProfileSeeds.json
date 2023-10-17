@@ -1,0 +1,38 @@
+[
+    {
+      "name": "Brian Kernighan",
+      "skills": ["Skill1"]
+    },
+    {
+      "name": "Max Kanat-Alexander",
+      "skills": ["Skill1", "Skill2", "Skill3"]
+    },
+    {
+      "name": "Amiko",
+      "skills": ["Skill1", "Skill2", "Skill3", "Skill4", "Skill5"]
+    },
+    {
+      "name": "Kent Beck",
+      "skills": ["Skill1", "Skill2"]
+    },
+    {
+      "name": "Edward V. Berard",
+      "skills": ["Skill1", "Skill2", "Skill3"]
+    },
+    {
+      "name": "Alan Kay",
+      "skills": ["Skill1", "Skill2", "Skill3"]
+    },
+    {
+      "name": "C.A.R. Hoare",
+      "skills": ["Skill1", "Skill2", "Skill3"]
+    },
+    {
+      "name": "David Thomas",
+      "skills": ["Skill1", "Skill2", "Skill3", "Skill4", "Skill5", "Skill6"]
+    },
+    {
+      "name": "Donald Knuth",
+      "skills": ["Skill1"]
+    }
+    ]
