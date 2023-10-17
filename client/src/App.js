@@ -15,6 +15,8 @@ import Login from './views/Login/Login';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
+import Blog from './views/Blog/Blog';
+
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
@@ -63,6 +65,10 @@ function App() {
               <Route 
                 path="/profiles/:profileId" 
                 element={<Profile />} 
+              />
+                 <Route 
+                path="/blog" 
+                element={<Blog />} 
               />
             </Routes>
           </div>
