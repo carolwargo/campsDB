@@ -3,12 +3,12 @@ import React from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
-import SkillsList from '../components/SkillsList';
-import SkillForm from '../components/SkillForm';
+import SkillsList from '../../components/SkillsList';
+import SkillForm from '../../components/SkillForm';
 
-import { QUERY_SINGLE_PROFILE, QUERY_ME } from '../utils/queries';
+import { QUERY_SINGLE_PROFILE, QUERY_ME } from '../../utils/queries';
 
-import Auth from '../utils/auth';
+import Auth from '../../utils/auth';
 
 const Profile = () => {
   const { profileId } = useParams();
