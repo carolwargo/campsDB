@@ -2,25 +2,25 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 
-import { ADD_PLAYER } from '../../utils/mutations';
+import { ADD_SKILL } from '../../utils/mutations';
 
 import Auth from '../../utils/auth';
 
-const PlayerForm = ({ profileId }) => {
-  const [player, setPlayer] = useState('');
+const SkillForm = ({ profileId }) => {
+  const [skill, setSkill] = useState('');
 
-  const [addPlayer, { error }] = useMutation(ADD_PLAYER);
+  const [addSkill, { error }] = useMutation(ADD_SKILL);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
     try {
       // eslint-disable-next-line no-unused-vars
-      const data = await addPlayer({
-        variables: { profileId, player },
+      const data = await addSkill({
+        variables: { profileId, skill },
       });
 
-      setPlayer('');
+      setSkill('');
     } catch (err) {
       console.error(err);
     }
@@ -28,7 +28,7 @@ const PlayerForm = ({ profileId }) => {
 
   return (
     <div>
-      <h4>Add Players Below...</h4>
+      <h4>Endorse some more skills below.</h4>
 
       {Auth.loggedIn() ? (
         <form
@@ -37,16 +37,16 @@ const PlayerForm = ({ profileId }) => {
         >
           <div className="col-12 col-lg-9">
             <input
-              placeholder="Add Player players..."
-              value={player}
+              placeholder="Endorse some skills..."
+              value={skill}
               className="form-input w-100"
-              onChange={(event) => setPlayer(event.target.value)}
+              onChange={(event) => setSkill(event.target.value)}
             />
           </div>
 
           <div className="col-12 col-lg-3">
             <button className="btn btn-info btn-block py-3" type="submit">
-                Add Player
+              Endorse Skill
             </button>
           </div>
           {error && (
@@ -57,7 +57,7 @@ const PlayerForm = ({ profileId }) => {
         </form>
       ) : (
         <p>
-          You need to be logged in to add players. Please{' '}
+          You need to be logged in to endorse skills. Please{' '}
           <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
         </p>
       )}
@@ -65,4 +65,4 @@ const PlayerForm = ({ profileId }) => {
   );
 };
 
-export default PlayerForm;
+export default SkillForm;

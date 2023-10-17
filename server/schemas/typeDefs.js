@@ -1,16 +1,14 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
-type Profile {
-  _id: ID
-  name: String
-  email: String
-  # There is now a field to store the user's password
-  password: String
-    players: [String]!
+  type Profile {
+    _id: ID
+    name: String
+    email: String
+    password: String
+    skills: [String]!
   }
 
-  # Set up an Auth type to handle returning data from a profile creating or user login
   type Auth {
     token: ID!
     profile: Profile
@@ -19,16 +17,17 @@ type Profile {
   type Query {
     profiles: [Profile]!
     profile(profileId: ID!): Profile
+    # Because we have the context functionality in place to check a JWT and decode its data, we can use a query that will always find and return the logged in user's data
+    me: Profile
   }
 
   type Mutation {
-    # Set up mutations to handle creating a profile or logging into a profile and return Auth type
     addProfile(name: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
 
-    addPlayer(profileId: ID!, player: String!): Profile
-    removeProfile(profileId: ID!): Profile
-    removePlayer(profileId: ID!, player: String!): Profile
+    addSkill(profileId: ID!, skill: String!): Profile
+    removeProfile: Profile
+    removeSkill(skill: String!): Profile
   }
 `;
 

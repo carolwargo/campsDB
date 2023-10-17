@@ -30,7 +30,7 @@ function TabsExample() {
         />
       </Navbar.Brand>
           <Nav.Item>
-            <NavLink to="/home" className="nav-link" activeclassname="active">Home</NavLink>
+            <NavLink to="/" className="nav-link" activeclassname="active">Home</NavLink>
           </Nav.Item>
           <Nav.Item>
             <NavLink to="/signup" className="nav-link" activeclassname="active">Signup</NavLink>
@@ -55,7 +55,6 @@ function TabsExample() {
           </Nav.Item>
           <NavDropdown className="dropdown" title="SIGNUP/LOGIN" id="basic-nav-dropdown">
             <NavDropdown.Item as={NavLink} to="/login">Login</NavDropdown.Item>
-            <NavDropdown.Item as={NavLink} to="/signup">Sign Up</NavDropdown.Item>
           </NavDropdown>
         </Nav>
       </Navbar.Collapse>
