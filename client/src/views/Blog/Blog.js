@@ -1,13 +1,16 @@
 import React from 'react';
 import './blog.css'; // Make sure to create App.css file for your custom styles
 
+import Harper from "../../assets/images/Harper.jpg";
+import Max from "../../assets/images/Max.jpg";
+
 function Blog() {
   return (
     <div className="w3-content" style={{ maxWidth: '1400px' }}>
       {/* Header */}
       <header className="w3-container w3-center w3-padding-32">
         <h1><b>MY BLOG</b></h1>
-        <p>Welcome to the blog of <span className="w3-tag">unknown</span></p>
+        <p>Welcome to the <span className="w3-tag"> 301_Catching</span> Blog Spot</p>
       </header>
 
       <div className="w3-row">
@@ -15,7 +18,7 @@ function Blog() {
         <div className="w3-col l8 s12">
           {/* Blog entry 1 */}
           <div className="w3-card-4 w3-margin w3-white">
-            <img src="/w3images/woods.jpg" alt="Nature" style={{ width: '100%' }} />
+          <img src={Max} alt="Max" style={{ width: '100%' }} />
             <div className="w3-container">
               <h3><b>TITLE HEADING</b></h3>
               <h5>Title description, <span className="w3-opacity">April 7, 2014</span></h5>
@@ -37,7 +40,7 @@ function Blog() {
 
           {/* Blog entry 2 */}
           <div className="w3-card-4 w3-margin w3-white">
-            <img src="/w3images/bridge.jpg" alt="Norway" style={{ width: '100%' }} />
+          <img src={Harper} alt="Harper" style={{ width: '100%' }} />
             <div className="w3-container">
               <h3><b>BLOG ENTRY</b></h3>
               <h5>Title description, <span className="w3-opacity">April 2, 2014</span></h5>

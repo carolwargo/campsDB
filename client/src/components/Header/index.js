@@ -2,22 +2,37 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import Auth from '../../utils/auth';
-
+import Cover from '../../assets/images/Cover.png'; 
 const Header = () => {
   const logout = (event) => {
     event.preventDefault();
     Auth.logout();
   };
+  const headerStyle = {
+    background: `url(${Cover}) no-repeat center center`,
+    backgroundSize: 'cover',
+    color: 'white',
+    marginBottom: '4px',
+    padding: '3px',
+    display: 'flex',
+    alignItems: 'center'
+  };
   return (
-    <header className="bg-info text-dark mb-4 py-3 display-flex align-center">
+    <header className="bg-black text-white mb-4 py-3 display-flex align-center"
+            style={headerStyle}>
       <div className="container flex-column justify-space-between-lg justify-center align-center text-center">
-        <Link className="text-dark" to="/">
+        <Link className="text-light" to="/">
           <h1 className="m-0" style={{ fontSize: '3rem' }}>
-            Tech Friends
+            301_Catching
           </h1>
         </Link>
-        <p className="m-0" style={{ fontSize: '1.75rem', fontWeight: '700' }}>
-          Meet your new programming pals.
+        <p className="m-0" style={{ fontSize: '1rem', fontWeight: '700' }}>
+        {" "}
+                The <span className="text-danger">
+                  {" "}
+                  "FOUNDATIONAL EXPERTS"
+                </span>{" "}
+                for everything catching:
         </p>
         <div>
           {Auth.loggedIn() ? (

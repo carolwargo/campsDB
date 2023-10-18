@@ -39,6 +39,9 @@ function TabsExample() {
             <NavLink to="/train" className="nav-link" activeclassname="active">Sessions</NavLink>
           </Nav.Item>
           <Nav.Item>
+            <NavLink to="/blog" className="nav-link" activeclassname="active">Blog</NavLink>
+          </Nav.Item>
+          <Nav.Item>
             <NavLink to="/contact" className="nav-link" activeclassname="active">Contact</NavLink>
           </Nav.Item>
         </Nav>
