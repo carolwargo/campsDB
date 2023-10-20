@@ -2,60 +2,69 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import Auth from '../../utils/auth';
-import Cover from '../../assets/images/Cover.png'; 
+import CoverResize from '../../assets/images/CoverResize.png'; 
+import './header.css';
+
+
 const Header = () => {
   const logout = (event) => {
     event.preventDefault();
     Auth.logout();
   };
+
+
   const headerStyle = {
-    background: `url(${Cover}) no-repeat center center`,
+    background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${CoverResize}) no-repeat center center`,
     backgroundSize: 'cover',
+    backgroundPosition: 'center center',
     color: 'white',
-    marginBottom: '4px',
-    padding: '3px',
+    height: '300px', // Adjust the height to your preference
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
   };
+ 
   return (
     <header className="bg-black text-white mb-4 py-3 display-flex align-center"
             style={headerStyle}>
       <div className="container flex-column justify-space-between-lg justify-center align-center text-center">
-        <Link className="text-light" to="/">
-          <h1 className="m-0" style={{ fontSize: '3rem' }}>
-            301_Catching
+          <h1 className="m-0" style={{ fontSize: '4rem' }}>
+            301_CATCHING
           </h1>
-        </Link>
-        <p className="m-0" style={{ fontSize: '1rem', fontWeight: '700' }}>
-        {" "}
-                The <span className="text-danger">
+        <h4 style={{ fontFamily: "icon" }}>
+                {" "}
+                The <span style={{color:"red"}}>
                   {" "}
                   "FOUNDATIONAL EXPERTS"
                 </span>{" "}
                 for everything catching:
-        </p>
-        <div>
+                <br></br>
+              
+                Providing Players with the skills to master their craft &
+                elevate their game.
+            
+                </h4>
+                <div>
           {Auth.loggedIn() ? (
             <>
-              <Link className="btn btn-lg btn-primary m-2" to="/me">
+              <Link className="btn btn-md btn-light m-2 custom-button" to="/me">
                 View My Profile
               </Link>
-              <button className="btn btn-lg btn-light m-2" onClick={logout}>
+              <button className="btn btn-md btn-light m-2 custom-button" onClick={logout}>
                 Logout
               </button>
             </>
           ) : (
             <>
-              <Link className="btn btn-lg btn-primary m-2" to="/login">
+              <Link className="btn btn-md btn-light m-2 custom-button"  to="/login">
                 Login
               </Link>
-              <Link className="btn btn-lg btn-light m-2" to="/signup">
+              <Link className="btn btn-md btn-light m-2 custom-button" to="/signup">
                 Signup
               </Link>
             </>
           )}
         </div>
-      </div>
+        </div>
     </header>
   );
 };

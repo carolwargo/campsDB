@@ -2,6 +2,7 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import Container from 'react-bootstrap/Container';
 import John from '../../assets/images/John.png'; // Make sure to import your image
 import Guy from '../../assets/images/Guy.png'; // Make sure to import your image
 import Joe from '../../assets/images/Joe.png'; // Make sure to import your image
@@ -30,9 +31,11 @@ const cardData = [
   },
 ];
 
+
 export default function GridExample() {
   return (
-    <Row xs={1} md={2} lg={4} className="g-4">
+    <Container>
+    <Row xs={1} md={2} lg={2} className="g-4">
       {cardData.map((card) => (
         <Col key={card.id}>
           <Card>
@@ -45,5 +48,6 @@ export default function GridExample() {
         </Col>
       ))}
     </Row>
+    </Container>
   );
 }

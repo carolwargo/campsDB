@@ -7,15 +7,18 @@ import { FaTwitter, FaInstagram } from 'react-icons/fa';
 import Logo2 from "../../assets/images/Logo2.png";
 import Container from 'react-bootstrap/Container';
 
-
-
 import "./style.css"
 
 function TabsExample() {
+  const navbarStyle = {
+    backgroundColor:"white",
+    boxShadow: '0 4px 2px -2px light gray' // Adjust the shadow as needed
+  };
+
   return (
-    <div>
-      <Container>
-    <Navbar variant="tabs" defaultactivekey="/home">
+    <div style={navbarStyle}>
+      <Container >
+        <Navbar variant="tabs" defaultactivekey="/home">
      
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
     
@@ -26,15 +29,17 @@ function TabsExample() {
           src={Logo2}
           alt="Logo2"
           height="30"
-          className="d-inline-block align-top ml-3"
+          className="d-inline-block align-top"
         />
       </Navbar.Brand>
+
+      <Nav.Item>
+        <NavLink to='/homepage'className="nav-link" activeclassname="active">Homepage</NavLink>
+      </Nav.Item>
           <Nav.Item>
             <NavLink to="/" className="nav-link" activeclassname="active">Home</NavLink>
           </Nav.Item>
-          <Nav.Item>
-            <NavLink to="/signup" className="nav-link" activeclassname="active">Signup</NavLink>
-          </Nav.Item>
+        
           <Nav.Item>
             <NavLink to="/train" className="nav-link" activeclassname="active">Sessions</NavLink>
           </Nav.Item>
@@ -45,6 +50,7 @@ function TabsExample() {
             <NavLink to="/contact" className="nav-link" activeclassname="active">Contact</NavLink>
           </Nav.Item>
         </Nav>
+        
         <Nav className="ml-auto"> {/* Use ml-auto class to move the NavDropdown to the right */}
           <Nav.Item>
             <NavLink to="https://twitter.com/301catching" target="_blank" rel="noopener noreferrer" className="nav-link">
