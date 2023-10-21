@@ -1,7 +1,7 @@
 import React from 'react';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import { FaUserCircle } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
 import { FaTwitter, FaInstagram } from 'react-icons/fa';
 import Logo2 from "../../assets/images/Logo2.png";
@@ -39,7 +39,9 @@ function TabsExample() {
           <Nav.Item>
             <NavLink to="/" className="nav-link" activeclassname="active">Home</NavLink>
           </Nav.Item>
-        
+        <Nav.Item>
+          <NavLink to="/about" className="nav-link" activeclassname="active">About</NavLink>
+        </Nav.Item>
           <Nav.Item>
             <NavLink to="/train" className="nav-link" activeclassname="active">Sessions</NavLink>
           </Nav.Item>
@@ -62,9 +64,11 @@ function TabsExample() {
               <FaInstagram size={20} />
             </NavLink>
           </Nav.Item>
-          <NavDropdown className="dropdown" title="SIGNUP/LOGIN" id="basic-nav-dropdown">
-            <NavDropdown.Item as={NavLink} to="/login">Login</NavDropdown.Item>
-          </NavDropdown>
+          <Nav.Item>
+            <NavLink as={NavLink} to="/login" target="_blank" rel="noopener noreferrer" className="nav-link">
+              <FaUserCircle size={20} />
+            </NavLink>
+          </Nav.Item>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

@@ -17,8 +17,9 @@
   }
   
   .nav-tabs .nav-link {
-    color: #333; /* Change the color to the desired shade */
-    background-color: white !important; /* Change the background color to the desired shade */
+    color: red; 
+    background-color: #d2cfcf !important; 
+    border-radius: 5px !important; /* Add the radius */
     box-shadow: 0 2px 4px rgba(31, 30, 30, 1) !important; /* Add the shadow style */
   
   }
@@ -26,8 +27,8 @@
   
   /* Styling for selected (active) tab */
   .navbar-tabs .nav-link.active {
-    color: red; /* Change the color to the desired shade */
-    background-color: #d2cfcf !important; /* Change the background color to the desired shade */
+    color: red; 
+    background-color: #d2cfcf !important; 
     border-radius: 5px !important; /* Add the radius */
     box-shadow: 0 2px 4px rgba(31, 30, 30, 1) !important; /* Add the shadow style */
   }

@@ -13,8 +13,10 @@ import Homepage from './views/Homepage/Homepage'
 import Profile from './views/Profile/Profile';
 import Signup from './views/Signup/Signup';
 import Login from './views/Login/Login';
+import About from './views/About/About';
 import Header from './components/Header';
 import Footer from './components/Footer';
+
 
 import Navbar from './components/Navbar/index'
 import Blog from './views/Blog/Blog';
@@ -62,6 +64,10 @@ function App() {
               <Route 
                 path="/login" 
                 element={<Login />} 
+              />
+              <Route
+              path='/about'
+              element={<About />}
               />
               <Route 
                 path="/signup" 

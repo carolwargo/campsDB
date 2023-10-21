@@ -6,7 +6,7 @@ import Auth from '../../utils/auth';
 
 
 
-const Home = () => {
+const UserAuth = () => {
   const logout = (event) => {
     event.preventDefault();
     Auth.logout();
@@ -45,5 +45,5 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default UserAuth;
 
