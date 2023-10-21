@@ -6,6 +6,9 @@ import { useQuery } from '@apollo/client';
 import SkillsList from '../../components/SkillsList';
 import SkillForm from '../../components/SkillForm';
 
+import ProfileForm from '../../components/ProfileForm';
+import Profilelist from '../../components/ProfileList';
+
 import { QUERY_SINGLE_PROFILE, QUERY_ME } from '../../utils/queries';
 
 import Auth from '../../utils/auth';
@@ -35,7 +38,7 @@ const Profile = () => {
 
   if (!profile?.name) {
     return (
-      <h4>
+      <h4 style={{color:'white'}}>
         You need to be logged in to see your profile page. Use the navigation
         links above to sign up or log in!
       </h4>
@@ -45,6 +48,8 @@ const Profile = () => {
   return (
     <div>
       <h2 className="card-header">
+        {/*ADD FUNCTION & THE FOLLOWING: <p>Enter Your Players Name & Date of Birth</p> 
+        ADD FUNCTION & THE FOLLOWING: <p> THE FOLLOWING PLAYERS HAVE BEEN ADDED TO YOUR PROFILE </p>*/}
         {profileId ? `${profile.name}'s` : 'Your'} friends have endorsed these
         skills...
       </h2>

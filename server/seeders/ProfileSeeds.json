@@ -4,6 +4,7 @@
     "email": "bkernighan@techfriends.dev",
     "password": "password01",
     "skills": ["AWK", "AMPL", "Unix"]
+    
   },
   {
     "name": "Max Kanat-Alexander",
@@ -48,7 +49,7 @@
     "name": "C.A.R. Hoare",
     "email": "choare@techfriends.dev",
     "password": "password07",
-    "skills": ["Algorithms", "Quicksort", "Hoare Logic"]
+    "": ["Algorithms", "Quicksort", "Hoare Logic"]
   },
   {
     "name": "David Thomas",

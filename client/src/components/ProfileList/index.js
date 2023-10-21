@@ -7,7 +7,7 @@ const ProfileList = ({ profiles, title }) => {
   }
 
   return (
-    <div>
+    <div >
       <h3 className="text-primary">{title}</h3>
       <div className="flex-row justify-space-between my-4">
         {profiles &&
@@ -27,8 +27,9 @@ const ProfileList = ({ profiles, title }) => {
                   className="btn btn-block btn-squared btn-light text-dark"
                   to={`/profiles/${profile._id}`}
                 >
-                  View and endorse their skills.
+                  View Player Sessions.
                 </Link>
+               {/*<p>CLICK TO VIEW PAST, CURRENT & FUTURE SESSIONS FOR A PLAYER...</p> */} 
               </div>
             </div>
           ))}

@@ -1,6 +1,6 @@
 import React from 'react';
 import './blog.css'; // Make sure to create App.css file for your custom styles
-
+import { Container } from "react-bootstrap";
 import Harper from "../../assets/images/Harper.jpg";
 import Max from "../../assets/images/Max.jpg";
 
@@ -8,6 +8,7 @@ function Blog() {
   return (
     <div className="w3-content" style={{ maxWidth: '1400px' }}>
       {/* Header */}
+      <Container>
       <header className="w3-container w3-center w3-padding-32">
         <h1><b>MY BLOG</b></h1>
         <p>Welcome to the <span className="w3-tag"> 301_Catching</span> Blog Spot</p>
@@ -105,6 +106,7 @@ function Blog() {
         <button className="w3-button w3-black w3-padding-large w3-margin-bottom">Next »</button>
         <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" rel="noopener noreferrer">w3.css</a></p>
     </footer>
+    </Container>
     </div>
   );
 }

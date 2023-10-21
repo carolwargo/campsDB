@@ -8,7 +8,7 @@ const Home = () => {
   const profiles = data?.profiles || [];
 
   return (
-    <main>
+    <main className="mb-4 py-3 display-flex align-center">
       <div className="flex-row justify-center">
         <div className="col-12 col-md-10 my-3">
           {loading ? (
@@ -16,7 +16,7 @@ const Home = () => {
           ) : (
             <ProfileList
               profiles={profiles}
-              title="Here's the current roster of friends..."
+              title="LIST OF PLAYERS..."
             />
           )}
         </div>

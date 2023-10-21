@@ -38,8 +38,8 @@ const ProfileForm = () => {
   };
 
   return (
-    <div>
-      <h3>Add yourself to the list...</h3>
+    <div className="d-flex justify-content-center align-items-center">
+      <h3>Add A Player To Your Parent Profile...</h3>
       <form
         className="flex-row justify-center justify-space-between-md align-center"
         onSubmit={handleFormSubmit}
@@ -47,7 +47,7 @@ const ProfileForm = () => {
         <div className="col-12 col-lg-9">
           <input
             placeholder="Add your profile name..."
-            value={name}
+            value={name} //playerName; change Models/profile [playerName]; Models/Player params: playerName
             className="form-input w-100"
             onChange={(event) => setName(event.target.value)}
           />
@@ -55,7 +55,7 @@ const ProfileForm = () => {
 
         <div className="col-12 col-lg-3">
           <button className="btn btn-info btn-block py-3" type="submit">
-            Add Profile
+            Add Player
           </button>
         </div>
         {error && (

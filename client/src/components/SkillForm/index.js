@@ -28,7 +28,7 @@ const SkillForm = ({ profileId }) => {
 
   return (
     <div>
-      <h4>Endorse some more skills below.</h4>
+      <h4>Add Players To Your Profile...</h4>
 
       {Auth.loggedIn() ? (
         <form
@@ -37,7 +37,15 @@ const SkillForm = ({ profileId }) => {
         >
           <div className="col-12 col-lg-9">
             <input
-              placeholder="Endorse some skills..."
+              placeholder="Player Name..."
+              value={skill}
+              className="form-input w-100"
+              onChange={(event) => setSkill(event.target.value)}
+            />
+          </div>
+          <div className="col-12 col-lg-9">
+            <input
+              placeholder="Date of Birth..."
               value={skill}
               className="form-input w-100"
               onChange={(event) => setSkill(event.target.value)}
@@ -46,7 +54,7 @@ const SkillForm = ({ profileId }) => {
 
           <div className="col-12 col-lg-3">
             <button className="btn btn-info btn-block py-3" type="submit">
-              Endorse Skill
+             Add Player
             </button>
           </div>
           {error && (
@@ -57,7 +65,7 @@ const SkillForm = ({ profileId }) => {
         </form>
       ) : (
         <p>
-          You need to be logged in to endorse skills. Please{' '}
+          You need to be logged in to add a Player. Please{' '}
           <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
         </p>
       )}
