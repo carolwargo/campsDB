@@ -3,11 +3,11 @@ import React from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
-import SkillsList from '../../components/SkillsList';
-import SkillForm from '../../components/SkillForm';
+import PlayersList from '../../components/PlayersList';
+import PlayerForm from '../../components/PlayerForm';
 
-import ProfileForm from '../../components/ProfileForm';
-import Profilelist from '../../components/ProfileList';
+//import ProfileForm from '../../components/ProfileForm';
+//import Profilelist from '../../components/ProfileList';
 
 import { QUERY_SINGLE_PROFILE, QUERY_ME } from '../../utils/queries';
 
@@ -51,18 +51,19 @@ const Profile = () => {
         {/*ADD FUNCTION & THE FOLLOWING: <p>Enter Your Players Name & Date of Birth</p> 
         ADD FUNCTION & THE FOLLOWING: <p> THE FOLLOWING PLAYERS HAVE BEEN ADDED TO YOUR PROFILE </p>*/}
         {profileId ? `${profile.name}'s` : 'Your'} friends have endorsed these
-        skills...
+        players...
       </h2>
+      
 
-      {profile.skills?.length > 0 && (
-        <SkillsList
-          skills={profile.skills}
+      {profile.players?.length > 0 && (
+        <PlayersList
+          players={profile.players}
           isLoggedInUser={!profileId && true}
         />
       )}
 
       <div className="my-4 p-4" style={{ border: '1px dotted #1a1a1a' }}>
-        <SkillForm profileId={profile._id} />
+        <PlayerForm profileId={profile._id} />
       </div>
     </div>
   );

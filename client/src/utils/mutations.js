@@ -1,5 +1,6 @@
 import { gql } from '@apollo/client';
 
+//need to add players dob & name 
 export const ADD_PROFILE = gql`
   mutation addProfile($name: String!, $email: String!, $password: String!) {
     addProfile(name: $name, email: $email, password: $password) {
@@ -12,15 +13,17 @@ export const ADD_PROFILE = gql`
   }
 `;
 
-export const ADD_SKILL = gql`
-  mutation addSkill($profileId: ID!, $skill: String!) {
-    addSkill(profileId: $profileId, skill: $skill) {
+export const ADD_PLAYER = gql`
+  mutation addPlayer($profileId: ID!, $player: String!) {
+    addPlayer(profileId: $profileId, player: $player) {
       _id
       name
-      skills
+      players
     }
   }
 `;
+
+
 
 export const LOGIN_USER = gql`
   mutation login($email: String!, $password: String!) {
@@ -34,12 +37,14 @@ export const LOGIN_USER = gql`
   }
 `;
 
-export const REMOVE_SKILL = gql`
-  mutation removeSkill($skill: String!) {
-    removeSkill(skill: $skill) {
+export const REMOVE_PLAYER = gql`
+  mutation removePlayer($player: String!) {
+    removePlayer(player: $player) {
       _id
       name
-      skills
+      players
     }
   }
 `;
+
+

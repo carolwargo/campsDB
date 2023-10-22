@@ -3,19 +3,18 @@ const Schema = mongoose.Schema;
 
 const sessionSchema = new Schema(
     {
-        sessionName: {
+        name: {
         type: String,
         required: true,
         },
-        sessionDate: {
-        type: Date,
+        description: {
+            type: String,
         },
+        date: {
+        type: String,
+        },
+        
     },
-    {
-        toJSON: {
-        virtuals: true,
-        },
-    }
     );
     const Session = model('Session', sessionSchema);
 
